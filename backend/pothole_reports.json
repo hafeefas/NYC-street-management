@@ -1,0 +1,820 @@
+[
+  {
+    "created_date": "2025-06-19T23:34:31.000",
+    "unique_key": "65312891",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.70892653589265",
+    "longitude": "-73.77731841618792"
+  },
+  {
+    "created_date": "2025-06-19T19:04:47.000",
+    "unique_key": "65305789",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.73869895585687",
+    "longitude": "-73.85897432594294"
+  },
+  {
+    "created_date": "2025-06-19T18:00:11.000",
+    "unique_key": "65306760",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.83562159175181",
+    "longitude": "-73.92785763031397"
+  },
+  {
+    "created_date": "2025-06-19T15:26:29.000",
+    "unique_key": "65310892",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.77648659823111",
+    "longitude": "-73.81485941316936"
+  },
+  {
+    "created_date": "2025-06-19T15:24:23.000",
+    "unique_key": "65310891",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.828678899177014",
+    "longitude": "-73.83558899585238"
+  },
+  {
+    "created_date": "2025-06-19T15:07:27.000",
+    "unique_key": "65306766",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.70058236858732",
+    "longitude": "-73.80774181591707"
+  },
+  {
+    "created_date": "2025-06-19T15:04:31.000",
+    "unique_key": "65312892",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.74482801721601",
+    "longitude": "-73.78597884680904"
+  },
+  {
+    "created_date": "2025-06-19T14:44:10.000",
+    "unique_key": "65310697",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "ROOSEVELT AVENUE",
+    "latitude": "40.74825063916961",
+    "longitude": "-73.87816517573096"
+  },
+  {
+    "created_date": "2025-06-19T13:39:51.000",
+    "unique_key": "65305785",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.84162229815776",
+    "longitude": "-73.86939615069366"
+  },
+  {
+    "created_date": "2025-06-19T13:34:49.000",
+    "unique_key": "65308796",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.60398361944209",
+    "longitude": "-74.11537737475022"
+  },
+  {
+    "created_date": "2025-06-19T13:16:28.000",
+    "unique_key": "65308799",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.777446245120935",
+    "longitude": "-73.81253509412835"
+  },
+  {
+    "created_date": "2025-06-19T12:26:21.000",
+    "unique_key": "65307767",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.71580653703652",
+    "longitude": "-73.88791732478406"
+  },
+  {
+    "created_date": "2025-06-19T12:14:21.000",
+    "unique_key": "65307770",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.59925032396823",
+    "longitude": "-73.95260710349008"
+  },
+  {
+    "created_date": "2025-06-19T11:25:02.000",
+    "unique_key": "65312894",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.741131183647056",
+    "longitude": "-73.90158049272817"
+  },
+  {
+    "created_date": "2025-06-19T11:23:32.000",
+    "unique_key": "65312895",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.74089617616554",
+    "longitude": "-73.89960689847297"
+  },
+  {
+    "created_date": "2025-06-19T10:38:05.000",
+    "unique_key": "65307768",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.73034633706395",
+    "longitude": "-73.78580526394784"
+  },
+  {
+    "created_date": "2025-06-19T09:48:11.000",
+    "unique_key": "65305792",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.71046944725937",
+    "longitude": "-74.01469860027404"
+  },
+  {
+    "created_date": "2025-06-19T09:31:58.000",
+    "unique_key": "65305786",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.88253220176031",
+    "longitude": "-73.84923776441059"
+  },
+  {
+    "created_date": "2025-06-19T09:28:25.000",
+    "unique_key": "65308794",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.882192158135716",
+    "longitude": "-73.84127173706295"
+  },
+  {
+    "created_date": "2025-06-19T08:56:36.000",
+    "unique_key": "65309822",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.632392395788386",
+    "longitude": "-73.99529114244247"
+  },
+  {
+    "created_date": "2025-06-19T08:43:08.000",
+    "unique_key": "65312889",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.89362294322791",
+    "longitude": "-73.85524208571559"
+  },
+  {
+    "created_date": "2025-06-19T08:32:13.000",
+    "unique_key": "65311917",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.741863453510625",
+    "longitude": "-73.90750492962665"
+  },
+  {
+    "created_date": "2025-06-19T08:02:33.000",
+    "unique_key": "65309815",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.57694529823272",
+    "longitude": "-74.10901300062815"
+  },
+  {
+    "created_date": "2025-06-19T05:04:36.000",
+    "unique_key": "65312896",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.692253779476836",
+    "longitude": "-73.73656086051649"
+  },
+  {
+    "created_date": "2025-06-18T22:47:48.000",
+    "unique_key": "65305594",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.708277398683414",
+    "longitude": "-73.9290270240667"
+  },
+  {
+    "created_date": "2025-06-18T22:46:49.000",
+    "unique_key": "65309635",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.66618076951064",
+    "longitude": "-73.90596977435693"
+  },
+  {
+    "created_date": "2025-06-18T22:45:46.000",
+    "unique_key": "65306591",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "VARICK STREET",
+    "latitude": "40.72675652515261",
+    "longitude": "-73.93609686928136"
+  },
+  {
+    "created_date": "2025-06-18T19:47:24.000",
+    "unique_key": "65296393",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.72031794440261",
+    "longitude": "-74.01216827113397"
+  },
+  {
+    "created_date": "2025-06-18T19:02:37.000",
+    "unique_key": "65299734",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.684383348172055",
+    "longitude": "-73.86400003935707"
+  },
+  {
+    "created_date": "2025-06-18T19:01:32.000",
+    "unique_key": "65304657",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.684383348172055",
+    "longitude": "-73.86400003935707"
+  },
+  {
+    "created_date": "2025-06-18T18:56:37.000",
+    "unique_key": "65300017",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.62899327936505",
+    "longitude": "-73.98363692284553"
+  },
+  {
+    "created_date": "2025-06-18T16:10:02.000",
+    "unique_key": "65298783",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.84700030392976",
+    "longitude": "-73.85870134784203"
+  },
+  {
+    "created_date": "2025-06-18T15:53:34.000",
+    "unique_key": "65303456",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.579766298539575",
+    "longitude": "-74.10379765978811"
+  },
+  {
+    "created_date": "2025-06-18T15:32:04.000",
+    "unique_key": "65300011",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.753283878026764",
+    "longitude": "-73.9069079685542"
+  },
+  {
+    "created_date": "2025-06-18T15:08:57.000",
+    "unique_key": "65297627",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.67894292402481",
+    "longitude": "-73.83446194265218"
+  },
+  {
+    "created_date": "2025-06-18T15:06:42.000",
+    "unique_key": "65304660",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.67815026036459",
+    "longitude": "-73.83108216039838"
+  },
+  {
+    "created_date": "2025-06-18T14:48:54.000",
+    "unique_key": "65311734",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "WOODHAVEN BOULEVARD",
+    "latitude": "40.72830505271924",
+    "longitude": "-73.87110473034824"
+  },
+  {
+    "created_date": "2025-06-18T14:48:14.000",
+    "unique_key": "65305592",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "WOODHAVEN BOULEVARD",
+    "latitude": "40.68310293075555",
+    "longitude": "-73.84553145317672"
+  },
+  {
+    "created_date": "2025-06-18T14:47:19.000",
+    "unique_key": "65307589",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "LIBERTY AVENUE",
+    "latitude": "40.68094788791885",
+    "longitude": "-73.84120993204525"
+  },
+  {
+    "created_date": "2025-06-18T14:46:39.000",
+    "unique_key": "65310696",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "WOODHAVEN BOULEVARD",
+    "latitude": "40.726874412937775",
+    "longitude": "-73.8705518792835"
+  },
+  {
+    "created_date": "2025-06-18T14:45:59.000",
+    "unique_key": "65305593",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "ROOSEVELT AVENUE",
+    "latitude": "40.74945441252468",
+    "longitude": "-73.86717316389236"
+  },
+  {
+    "created_date": "2025-06-18T14:45:11.000",
+    "unique_key": "65307590",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "ROOSEVELT AVENUE",
+    "latitude": "40.74825063916961",
+    "longitude": "-73.87816517573096"
+  },
+  {
+    "created_date": "2025-06-18T14:42:48.000",
+    "unique_key": "65308579",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "ROOSEVELT AVENUE",
+    "latitude": "40.74695632843849",
+    "longitude": "-73.89029377305094"
+  },
+  {
+    "created_date": "2025-06-18T14:39:20.000",
+    "unique_key": "65308580",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "BROADWAY",
+    "latitude": "40.747568686815164",
+    "longitude": "-73.89351562832782"
+  },
+  {
+    "created_date": "2025-06-18T14:04:38.000",
+    "unique_key": "65301117",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.52766701124552",
+    "longitude": "-74.23022888842462"
+  },
+  {
+    "created_date": "2025-06-18T13:45:59.000",
+    "unique_key": "65304661",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.69953105419444",
+    "longitude": "-73.91103665226316"
+  },
+  {
+    "created_date": "2025-06-18T13:20:53.000",
+    "unique_key": "65304665",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.768797068314726",
+    "longitude": "-73.95836382115831"
+  },
+  {
+    "created_date": "2025-06-18T12:33:39.000",
+    "unique_key": "65304655",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.62823165863739",
+    "longitude": "-74.12536961202356"
+  },
+  {
+    "created_date": "2025-06-18T11:53:17.000",
+    "unique_key": "65297630",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.610503219405324",
+    "longitude": "-73.957666590765"
+  },
+  {
+    "created_date": "2025-06-18T11:43:42.000",
+    "unique_key": "65297628",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.68461080965975",
+    "longitude": "-73.79986269253183"
+  },
+  {
+    "created_date": "2025-06-18T11:19:26.000",
+    "unique_key": "65303457",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.740277779990656",
+    "longitude": "-73.92780930470207"
+  },
+  {
+    "created_date": "2025-06-18T11:07:52.000",
+    "unique_key": "65297620",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.868018482429",
+    "longitude": "-73.89996454788626"
+  },
+  {
+    "created_date": "2025-06-18T10:49:30.000",
+    "unique_key": "65304443",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.77153038322124",
+    "longitude": "-73.78822891978689"
+  },
+  {
+    "created_date": "2025-06-18T10:49:13.000",
+    "unique_key": "65303454",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "SOUTHERN BOULEVARD",
+    "latitude": "40.861704735371966",
+    "longitude": "-73.88157617123952"
+  },
+  {
+    "created_date": "2025-06-18T10:20:38.000",
+    "unique_key": "65301118",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.71779364576859",
+    "longitude": "-73.90965949431525"
+  },
+  {
+    "created_date": "2025-06-18T10:08:18.000",
+    "unique_key": "65296394",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.763114133956435",
+    "longitude": "-73.96251511418777"
+  },
+  {
+    "created_date": "2025-06-18T10:06:49.000",
+    "unique_key": "65301119",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.740916313259625",
+    "longitude": "-73.95225733610243"
+  },
+  {
+    "created_date": "2025-06-18T09:54:34.000",
+    "unique_key": "65304656",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.61116971170687",
+    "longitude": "-74.08708798568505"
+  },
+  {
+    "created_date": "2025-06-18T08:45:58.000",
+    "unique_key": "65300015",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.766308519898914",
+    "longitude": "-73.81969629404819"
+  },
+  {
+    "created_date": "2025-06-18T08:18:54.000",
+    "unique_key": "65296389",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.58649432438544",
+    "longitude": "-73.80401629244469"
+  },
+  {
+    "created_date": "2025-06-18T08:17:52.000",
+    "unique_key": "65298788",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.778805647862356",
+    "longitude": "-73.94796590894302"
+  },
+  {
+    "created_date": "2025-06-18T08:11:37.000",
+    "unique_key": "65300009",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.62641760935298",
+    "longitude": "-74.13007824796493"
+  },
+  {
+    "created_date": "2025-06-18T07:42:07.000",
+    "unique_key": "65297629",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.78384401265165",
+    "longitude": "-73.97998787457806"
+  },
+  {
+    "created_date": "2025-06-18T07:10:04.000",
+    "unique_key": "65302029",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.58910769655618",
+    "longitude": "-73.8010058287987"
+  },
+  {
+    "created_date": "2025-06-18T07:02:05.000",
+    "unique_key": "65306590",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.7325834170122",
+    "longitude": "-73.86805111721684"
+  },
+  {
+    "created_date": "2025-06-18T07:00:42.000",
+    "unique_key": "65308581",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "WOODHAVEN BOULEVARD",
+    "latitude": "40.722339193879115",
+    "longitude": "-73.86737151248097"
+  },
+  {
+    "created_date": "2025-06-18T06:59:55.000",
+    "unique_key": "65311735",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.69478294197407",
+    "longitude": "-73.85256888997034"
+  },
+  {
+    "created_date": "2025-06-18T06:59:16.000",
+    "unique_key": "65309634",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.68648130012925",
+    "longitude": "-73.84725077006158"
+  },
+  {
+    "created_date": "2025-06-18T06:58:32.000",
+    "unique_key": "65307591",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.729515924253334",
+    "longitude": "-73.87149205796057"
+  },
+  {
+    "created_date": "2025-06-18T06:57:45.000",
+    "unique_key": "65312728",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.727058400631655",
+    "longitude": "-73.87063089613612"
+  },
+  {
+    "created_date": "2025-06-18T06:38:51.000",
+    "unique_key": "65296391",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.78022645005115",
+    "longitude": "-73.8025433885418"
+  },
+  {
+    "created_date": "2025-06-18T06:17:57.000",
+    "unique_key": "65298785",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.55156230926704",
+    "longitude": "-74.14529428024865"
+  },
+  {
+    "created_date": "2025-06-17T23:56:44.000",
+    "unique_key": "65289697",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.61817722091726",
+    "longitude": "-73.99927238970166"
+  },
+  {
+    "created_date": "2025-06-17T23:29:19.000",
+    "unique_key": "65302030",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "MANHATTAN AVENUE",
+    "latitude": "40.71819277654783",
+    "longitude": "-73.94668208617851"
+  },
+  {
+    "created_date": "2025-06-17T23:28:15.000",
+    "unique_key": "65296148",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.643204106297",
+    "longitude": "-73.90928123324245"
+  },
+  {
+    "created_date": "2025-06-17T23:27:00.000",
+    "unique_key": "65298541",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.680859030012435",
+    "longitude": "-73.95440229089478"
+  },
+  {
+    "created_date": "2025-06-17T23:26:04.000",
+    "unique_key": "65304446",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.6958310473321",
+    "longitude": "-73.98138465865527"
+  },
+  {
+    "created_date": "2025-06-17T22:06:05.000",
+    "unique_key": "65294121",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "ALLERTON AVENUE",
+    "latitude": "40.86533812663514",
+    "longitude": "-73.85035052567925"
+  },
+  {
+    "created_date": "2025-06-17T21:46:03.000",
+    "unique_key": "65292961",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.68434889523044",
+    "longitude": "-73.80077569919165"
+  },
+  {
+    "created_date": "2025-06-17T19:49:03.000",
+    "unique_key": "65294130",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.63059204654893",
+    "longitude": "-73.97550523391867"
+  },
+  {
+    "created_date": "2025-06-17T19:19:58.000",
+    "unique_key": "65290805",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.62268882582162",
+    "longitude": "-73.96186631929172"
+  },
+  {
+    "created_date": "2025-06-17T18:34:19.000",
+    "unique_key": "65292960",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.59415713297275",
+    "longitude": "-74.18650383452147"
+  },
+  {
+    "created_date": "2025-06-17T18:19:42.000",
+    "unique_key": "65288602",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.77165784559385",
+    "longitude": "-73.95318842529461"
+  },
+  {
+    "created_date": "2025-06-17T17:12:46.000",
+    "unique_key": "65294128",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.77480902588772",
+    "longitude": "-73.98441345655955"
+  },
+  {
+    "created_date": "2025-06-17T16:38:34.000",
+    "unique_key": "65288600",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.5962567938926",
+    "longitude": "-73.76683397006815"
+  },
+  {
+    "created_date": "2025-06-17T15:34:46.000",
+    "unique_key": "65295232",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "WEST   23 STREET",
+    "latitude": "40.74601497574642",
+    "longitude": "-74.00021653657767"
+  },
+  {
+    "created_date": "2025-06-17T15:34:17.000",
+    "unique_key": "65289695",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "BOWERY",
+    "latitude": "40.722009168256655",
+    "longitude": "-73.99337636742237"
+  },
+  {
+    "created_date": "2025-06-17T15:33:52.000",
+    "unique_key": "65292963",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.768119296502654",
+    "longitude": "-73.95886244436846"
+  },
+  {
+    "created_date": "2025-06-17T15:33:19.000",
+    "unique_key": "65292964",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "EAST   84 STREET",
+    "latitude": "40.778010340665475",
+    "longitude": "-73.95616637915529"
+  },
+  {
+    "created_date": "2025-06-17T15:33:06.000",
+    "unique_key": "65292962",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.58910769655618",
+    "longitude": "-73.8010058287987"
+  },
+  {
+    "created_date": "2025-06-17T15:28:30.000",
+    "unique_key": "65291736",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.695466807721665",
+    "longitude": "-73.73488208986595"
+  },
+  {
+    "created_date": "2025-06-17T15:26:32.000",
+    "unique_key": "65293920",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.78022645005115",
+    "longitude": "-73.8025433885418"
+  },
+  {
+    "created_date": "2025-06-17T15:12:31.000",
+    "unique_key": "65292958",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.87976636714139",
+    "longitude": "-73.83194409203952"
+  },
+  {
+    "created_date": "2025-06-17T15:11:20.000",
+    "unique_key": "65304439",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.7325834170122",
+    "longitude": "-73.86805111721684"
+  },
+  {
+    "created_date": "2025-06-17T15:11:01.000",
+    "unique_key": "65304440",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.72791217940204",
+    "longitude": "-73.87324140637311"
+  },
+  {
+    "created_date": "2025-06-17T15:10:41.000",
+    "unique_key": "65297344",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "street_name": "85 STREET",
+    "latitude": "40.695851732766876",
+    "longitude": "-73.86002421531678"
+  },
+  {
+    "created_date": "2025-06-17T15:10:17.000",
+    "unique_key": "65297345",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.72748065230135",
+    "longitude": "-73.87520494815676"
+  },
+  {
+    "created_date": "2025-06-17T15:09:53.000",
+    "unique_key": "65299735",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.725996476320084",
+    "longitude": "-73.87336771755923"
+  },
+  {
+    "created_date": "2025-06-17T15:08:57.000",
+    "unique_key": "65298530",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.709247961533734",
+    "longitude": "-73.86377617538092"
+  },
+  {
+    "created_date": "2025-06-17T15:08:25.000",
+    "unique_key": "65298531",
+    "complaint_type": "Street Condition",
+    "descriptor": "Pothole",
+    "latitude": "40.70849336378696",
+    "longitude": "-73.85938810066038"
+  }
+]
