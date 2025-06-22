@@ -4,6 +4,10 @@ from typing import Tuple, Optional
 from PIL import Image, ImageDraw, ImageFont
 import urllib.parse
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
 GOOGLE_API_KEY = os.getenv("GOOGLE_MAPS_KEY")  # set this in your env
 
 def _check_key():
