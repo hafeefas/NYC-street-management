@@ -19,7 +19,7 @@ function App() {
   const [selectedMarker, setSelectedMarker] = useState<MarkerData | null>(null);
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
+    <div style={{ display: 'flex', height: '100vh', width: '100vw' }}>
       {/* Map Section */}
       <MapContainer
         center={nycPosition}
@@ -44,7 +44,7 @@ function App() {
       <div
         style={{
           width: '50%',
-          padding: '1rem',
+          padding: '0.5rem',
           backgroundColor: '#f0f0f0',
           overflowY: 'auto',
         }}
