@@ -1,6 +1,9 @@
+from dotenv import load_dotenv
+load_dotenv()
 from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles # may need to add this for frontend later
 import json
 import os
 from PIL import Image
@@ -9,9 +12,11 @@ from map_service import street_view_url, download_image, annotate_point
 
 app = FastAPI()
 
+# Mount static files directory
+# app.mount("/images", StaticFiles(directory="temp"), name="images") #may need to add this for frontend later
+
 # For Moondream Cloud, use your API key:
-# model = md.vl(api_key="<your-api-key>")
-model = md.vl(endpoint="http://localhost:20200/v1")
+model = md.vl(api_key=os.getenv("MD_API_KEY"))
 
 # Allow all origins for development purposes.
 # In a production environment, you would restrict this to your frontend's domain.
@@ -92,7 +97,7 @@ def analyze_pothole(lat: float, lng: float):
             # Add additional analysis data
             analysis_data["analysis"]["center_point"] = {"x": cx, "y": cy}
             analysis_data["analysis"]["point_analysis"] = point_analysis
-            analysis_data["analysis"]["annotated_image_path"] = str(dst)
+            # analysis_data["analysis"]["annotated_image_path"] = f"http://localhost:8000/images/{lat}-{lng}-annotated.png" #may need to add this for frontend later
         
         return analysis_data
         

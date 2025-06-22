@@ -1,10 +1,12 @@
+from dotenv import load_dotenv
+load_dotenv()
 import os
 from pathlib import Path
 from typing import Tuple, Optional
 from PIL import Image, ImageDraw, ImageFont
 import urllib.parse
 import requests
-GOOGLE_API_KEY = os.getenv("GOOGLE_MAPS_KEY")  # set this in your env
+GOOGLE_API_KEY = os.getenv("GOOGLE_MAPS_KEY")
 
 def _check_key():
     if not GOOGLE_API_KEY:
