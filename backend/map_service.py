@@ -1,14 +1,15 @@
+from dotenv import load_dotenv
+load_dotenv()
 import os
 from pathlib import Path
 from typing import Tuple, Optional
 from PIL import Image, ImageDraw, ImageFont
 import urllib.parse
 import requests
+GOOGLE_API_KEY = os.getenv("GOOGLE_MAPS_KEY")
 from dotenv import load_dotenv
 
 load_dotenv()
-
-GOOGLE_API_KEY = os.getenv("GOOGLE_MAPS_KEY")  # set this in your env
 
 def _check_key():
     if not GOOGLE_API_KEY:
@@ -36,7 +37,7 @@ def street_view_url(lat: float,
                     lng: float,
                     size: str = "600x400",
                     heading: int = 0,
-                    pitch: int = 0,
+                    pitch: int = -30,
                     fov: int = 80) -> str:
     """
     Return a URL for a static Street View image (JPG) at the location.

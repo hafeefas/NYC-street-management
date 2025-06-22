@@ -1,197 +1,118 @@
-import React, { useState, useEffect } from "react";
-import { MapContainer } from "react-leaflet/MapContainer";
-import { TileLayer } from "react-leaflet/TileLayer";
-import { Marker } from "react-leaflet/Marker";
-import { Popup } from "react-leaflet/Popup";
-import "leaflet/dist/leaflet.css";
+import React, { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import './App.css';
+import ReportForm from './components/ReportForm';
+import type { ReportResponse } from './services/311Service';
+import L from 'leaflet';
 
+// Workaround to fix default icon issues with bundlers
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
+
+const nycPosition: [number, number] = [40.7128, -74.006];
+
+// Type for the raw data coming from your backend API
+interface PotholeReportAPI {
+  unique_key: string;
+  latitude: string;
+  longitude: string;
+  street_name: string;
+  created_date: string;
+}
+
+// The app's internal data structure for each map marker
 type MarkerData = {
   id: string;
   position: [number, number];
   description: string;
-  report: PotholeReport;
-};
-
-type PotholeReport = {
-  created_date: string;
-  unique_key: string;
-  complaint_type: string;
-  descriptor: string;
-  latitude: string;
-  longitude: string;
-  street_name?: string;
+  reportId?: string; // Used to track 311 submission status
 };
 
 function App() {
   const [markers, setMarkers] = useState<MarkerData[]>([]);
-  const [overlayOpen, setOverlayOpen] = useState(false);
-  const [analyzerInfo, setAnalyzerInfo] = useState<object | null>(null);
-  const [loadingAnalyzer, setLoadingAnalyzer] = useState(false);
-  const [overlayPos, setOverlayPos] = useState({ x: 0, y: 0 });
-  const [dragging, setDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [markerToReport, setMarkerToReport] = useState<MarkerData | null>(null);
 
+  // Fetch pothole data from the backend when the app loads
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/potholes")
-      .then((res) => res.json())
-      .then((data: PotholeReport[]) => {
-        const transformed = data.map((item, idx) => ({
-          id: item.unique_key ? String(item.unique_key) : String(idx),
-          position: [parseFloat(item.latitude), parseFloat(item.longitude)] as [
-            number,
-            number
-          ],
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch');
+        return res.json();
+      })
+      .then((data: PotholeReportAPI[]) => {
+        const transformedData = data.map((item) => ({
+          id: item.unique_key,
+          position: [parseFloat(item.latitude), parseFloat(item.longitude)] as [number, number],
           description: item.street_name
             ? `Pothole at ${item.street_name}`
-            : `Pothole reported on ${item.created_date}`,
-          report: item,
+            : `Pothole reported on ${new Date(item.created_date).toLocaleDateString()}`,
         }));
-        console.log(transformed);
-        setMarkers(transformed);
+        setMarkers(transformedData);
       })
       .catch((err) => {
         console.error("Failed to fetch pothole data:", err);
       });
   }, []);
 
-  // Drag handlers
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (dragging) {
-        setOverlayPos({
-          x: e.clientX - dragOffset.x,
-          y: e.clientY - dragOffset.y,
-        });
-      }
-    };
-    const handleMouseUp = () => setDragging(false);
-    if (dragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-    }
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [dragging, dragOffset]);
-
-  // Function to fetch analyzer info
-  const handleMarkerClick = async (marker: MarkerData) => {
-    setOverlayOpen(true);
-    setLoadingAnalyzer(true);
-    setAnalyzerInfo(null);
-    try {
-      const lat = marker.position[0];
-      const lng = marker.position[1];
-      const res = await fetch(
-        `http://127.0.0.1:8000/api/potholes/analyzer?lat=${lat}&lng=${lng}`
+  const handleReportSuccess = (response: ReportResponse) => {
+    if (markerToReport && response.success && response.reportId) {
+      setMarkers(prevMarkers =>
+        prevMarkers.map(m =>
+          m.id === markerToReport.id
+            ? { ...m, reportId: response.reportId }
+            : m
+        )
       );
-      const data = await res.json();
-      setAnalyzerInfo(data);
-    } catch {
-      setAnalyzerInfo({ error: "Failed to fetch analyzer info." });
-    } finally {
-      setLoadingAnalyzer(false);
     }
+    // Keep the form open to show success, user will close it manually
   };
 
   return (
-    <>
-      {/* Apple Maps-style Side Overlay */}
-      {overlayOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: overlayPos.y,
-            left: overlayPos.x,
-            height: dragging ? "100%" : "60%",
-            width: 340,
-            background: "rgba(20,30,60,0.85)",
-            color: "#fff",
-            zIndex: 2000,
-            borderTopRightRadius: 20,
-            borderBottomRightRadius: 20,
-            boxShadow: "2px 0 16px rgba(0,0,0,0.3)",
-            padding: "32px 24px 24px 24px",
-            display: "flex",
-            flexDirection: "column",
-            overflowY: "auto",
-            cursor: dragging ? "grabbing" : "default",
-          }}
-        >
-          <button
-            onClick={() => setOverlayOpen(false)}
-            style={{
-              position: "absolute",
-              top: 16,
-              right: 16,
-              background: "none",
-              border: "none",
-              color: "#fff",
-              fontSize: 28,
-              cursor: "pointer",
-            }}
-            aria-label="Close panel"
-          >
-            ×
-          </button>
-          <h2
-            style={{ marginTop: 0, cursor: "grab", userSelect: "none" }}
-            onMouseDown={(e) => {
-              setDragging(true);
-              setDragOffset({
-                x: e.clientX - overlayPos.x,
-                y: e.clientY - overlayPos.y,
-              });
-            }}
-          >
-            Pothole Analyzer
-          </h2>
-          {loadingAnalyzer && <p>Loading analysis...</p>}
-          {analyzerInfo && (
-            <pre style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
-              {JSON.stringify(analyzerInfo, null, 2)}
-            </pre>
-          )}
-        </div>
-      )}
-      <MapContainer
-        center={[40.7128, -74.006]}
-        zoom={12}
-        style={{ height: "100vh", width: "100vw" }}
-      >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+      <MapContainer center={nycPosition} zoom={13} className="map-container">
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
         {markers.map((marker) => (
           <Marker
             key={marker.id}
             position={marker.position}
             eventHandlers={{
-              click: () => handleMarkerClick(marker),
+              click: () => {
+                setMarkerToReport(marker);
+              },
             }}
           >
-            <Popup>
-              <div>
-                <strong>Pothole Report</strong>
-                <br />
-                <strong>ID:</strong> {marker.id}
-                <br />
-                <strong>Street:</strong> {marker.report.street_name || "N/A"}
-                <br />
-                <strong>Date:</strong> {marker.report.created_date}
-                <br />
-                <strong>Type:</strong> {marker.report.complaint_type}
-                <br />
-                <strong>Descriptor:</strong> {marker.report.descriptor}
-                <br />
-                <strong>Lat:</strong> {marker.position[0].toFixed(5)}
-                <br />
-                <strong>Lng:</strong> {marker.position[1].toFixed(5)}
+            <Tooltip>
+              <div className="map-tooltip">
+                <strong>{marker.description}</strong>
+                {marker.reportId && (
+                  <p className="tooltip-submitted-status">
+                    ✓ Report Submitted
+                  </p>
+                )}
               </div>
-            </Popup>
+            </Tooltip>
           </Marker>
         ))}
       </MapContainer>
-    </>
+
+      {markerToReport && (
+        <ReportForm
+          isVisible={!!markerToReport}
+          latitude={markerToReport.position[0]}
+          longitude={markerToReport.position[1]}
+          onClose={() => setMarkerToReport(null)}
+          onSuccess={handleReportSuccess}
+        />
+      )}
+    </div>
   );
 }
 
