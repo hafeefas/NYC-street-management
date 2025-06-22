@@ -3,7 +3,7 @@ load_dotenv()
 from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles # may need to add this for frontend later
+from fastapi.staticfiles import StaticFiles
 import json
 import os
 from PIL import Image
@@ -12,8 +12,8 @@ from map_service import street_view_url, download_image, annotate_point
 
 app = FastAPI()
 
-# Mount static files directory
-# app.mount("/images", StaticFiles(directory="temp"), name="images") #may need to add this for frontend later
+# Mount static files directory to make images in 'temp' accessible via URL
+app.mount("/images", StaticFiles(directory="temp"), name="images")
 
 # For Moondream Cloud, use your API key:
 model = md.vl(api_key=os.getenv("MD_API_KEY"))
@@ -60,7 +60,9 @@ def analyze_pothole(lat: float, lng: float):
         
         # Load and analyze image with Moondream
         image = Image.open(image_path)
-        detection_result = model.detect(image=image, object="pothole")
+        # Using a more descriptive prompt to improve accuracy
+        prompt = "a pothole in the pavement or asphalt road surface"
+        detection_result = model.detect(image=image, object=prompt)
         
         # Initialize response data
         analysis_data = {
@@ -85,19 +87,22 @@ def analyze_pothole(lat: float, lng: float):
             cx = int(((obj["x_min"] + obj["x_max"]) / 2) * w)
             cy = int(((obj["y_min"] + obj["y_max"]) / 2) * h)
             
-            # Create annotated image (save as PNG since annotate_point creates RGBA)
+            # Create annotated image
             src = Path(image_path)
-            dst = Path(f'./temp/{lat}-{lng}-annotated.png')
+            # Use a unique name for the annotated file to prevent browser caching issues
+            annotated_filename = f"{lat}-{lng}-annotated.png"
+            dst = Path(f'./temp/{annotated_filename}')
             annotate_point(src, (cx, cy), dst=dst, radius=6, color=(255, 0, 0))
             
             # Get additional analysis from Moondream
             annotated_image = Image.open(dst)
-            point_analysis = model.point(annotated_image, "pothole")
+            # Using the same descriptive prompt for consistency
+            point_analysis = model.point(annotated_image, prompt)
             
-            # Add additional analysis data
+            # Add additional analysis data with a full URL
             analysis_data["analysis"]["center_point"] = {"x": cx, "y": cy}
             analysis_data["analysis"]["point_analysis"] = point_analysis
-            # analysis_data["analysis"]["annotated_image_path"] = f"http://localhost:8000/images/{lat}-{lng}-annotated.png" #may need to add this for frontend later
+            analysis_data["analysis"]["annotated_image_path"] = f"http://localhost:8000/images/{annotated_filename}"
         
         return analysis_data
         

@@ -596,15 +596,6 @@
     "longitude": "-73.99927238970166"
   },
   {
-    "created_date": "2025-06-17T23:29:19.000",
-    "unique_key": "65302030",
-    "complaint_type": "Street Condition",
-    "descriptor": "Pothole",
-    "street_name": "MANHATTAN AVENUE",
-    "latitude": "40.71819277654783",
-    "longitude": "-73.94668208617851"
-  },
-  {
     "created_date": "2025-06-17T23:28:15.000",
     "unique_key": "65296148",
     "complaint_type": "Street Condition",

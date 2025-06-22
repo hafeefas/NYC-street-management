@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
 import ReportForm from './components/ReportForm';
@@ -16,22 +16,48 @@ L.Icon.Default.mergeOptions({
 
 const nycPosition: [number, number] = [40.7128, -74.006];
 
+// Type for the raw data coming from your backend API
+interface PotholeReportAPI {
+  unique_key: string;
+  latitude: string;
+  longitude: string;
+  street_name: string;
+  created_date: string;
+}
+
+// The app's internal data structure for each map marker
 type MarkerData = {
-  id: number;
+  id: string;
   position: [number, number];
   description: string;
-  severity?: 'low' | 'medium' | 'high';
-  reportId?: string; // To track submission status
+  reportId?: string; // Used to track 311 submission status
 };
 
-const initialMarkers: MarkerData[] = [
-  { id: 1, position: [40.7128, -74.006], description: 'Pothole at Wall St', severity: 'high' },
-  { id: 2, position: [40.7306, -73.9352], description: 'Pothole near Queens', severity: 'medium' },
-];
-
 function App() {
-  const [markers, setMarkers] = useState<MarkerData[]>(initialMarkers);
+  const [markers, setMarkers] = useState<MarkerData[]>([]);
   const [markerToReport, setMarkerToReport] = useState<MarkerData | null>(null);
+
+  // Fetch pothole data from the backend when the app loads
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/potholes")
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch');
+        return res.json();
+      })
+      .then((data: PotholeReportAPI[]) => {
+        const transformedData = data.map((item) => ({
+          id: item.unique_key,
+          position: [parseFloat(item.latitude), parseFloat(item.longitude)] as [number, number],
+          description: item.street_name
+            ? `Pothole at ${item.street_name}`
+            : `Pothole reported on ${new Date(item.created_date).toLocaleDateString()}`,
+        }));
+        setMarkers(transformedData);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch pothole data:", err);
+      });
+  }, []);
 
   const handleReportSuccess = (response: ReportResponse) => {
     if (markerToReport && response.success && response.reportId) {
@@ -43,7 +69,7 @@ function App() {
         )
       );
     }
-    setMarkerToReport(null); // Close the form
+    // Keep the form open to show success, user will close it manually
   };
 
   return (
@@ -54,27 +80,25 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {markers.map((marker) => (
-          <Marker key={marker.id} position={marker.position}>
-            <Popup>
-              <div className="popup-content">
-                <h4>Pothole Details</h4>
-                <p>{marker.description}</p>
-                {marker.severity && <p>Severity: <strong>{marker.severity.toUpperCase()}</strong></p>}
-                
-                {marker.reportId ? (
-                  <div className="popup-submitted-message">
+          <Marker
+            key={marker.id}
+            position={marker.position}
+            eventHandlers={{
+              click: () => {
+                setMarkerToReport(marker);
+              },
+            }}
+          >
+            <Tooltip>
+              <div className="map-tooltip">
+                <strong>{marker.description}</strong>
+                {marker.reportId && (
+                  <p className="tooltip-submitted-status">
                     ✓ Report Submitted
-                  </div>
-                ) : (
-                  <button
-                    className="popup-report-button"
-                    onClick={() => setMarkerToReport(marker)}
-                  >
-                    Submit 311 Report
-                  </button>
+                  </p>
                 )}
               </div>
-            </Popup>
+            </Tooltip>
           </Marker>
         ))}
       </MapContainer>

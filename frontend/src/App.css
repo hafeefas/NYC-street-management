@@ -184,12 +184,8 @@
 
 .form-actions {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  padding: 1.5rem;
-  border-top: 1px solid #e9ecef;
-  background-color: #f8f9fa;
-  flex-shrink: 0;
+  justify-content: center;
+  padding-top: 1rem;
 }
 .form-actions button {
   padding: 0.75rem 1.5rem;
@@ -216,6 +212,87 @@
   background-color: #0056b3;
 }
 .submit-button:disabled {
-  background-color: #adb5bd;
+  background-color: #a0c8f0;
   cursor: not-allowed;
+}
+
+.submit-button.submitted {
+  background-color: #28a745;
+  color: white;
+  cursor: default;
+}
+
+/* New Analysis View Styles */
+.analysis-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.analysis-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #dee2e6;
+}
+
+.analysis-result {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.analysis-result.success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+}
+
+.analysis-result.error {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.analysis-info {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 1rem 0;
+  max-width: 350px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+/* New Tooltip Styles */
+.leaflet-tooltip {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  color: #333;
+  padding: 8px 12px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.map-tooltip strong {
+  font-weight: 600;
+}
+
+.tooltip-submitted-status {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #28a745;
+  font-weight: 500;
 }
