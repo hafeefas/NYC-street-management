@@ -4,5 +4,6 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+node_modules
 .venv
 temp
